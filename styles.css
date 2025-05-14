@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f8f3f3;
+    --text-color: #000000;
+    --accent-color: #e05555;
+    --pink-bg: #f0d0d5;
+    --button-bg: #f0d0d5;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    background-image: url('assets/hearts-bg.png');
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#app {
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('assets/hearts-bg.png');
+    background-size: cover;
+    transition: transform 0.4s ease;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* Первый экран */
+.welcome-screen .hearts-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.welcome-screen .title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.welcome-screen .title .accent {
+    color: var(--accent-color);
+}
+
+.welcome-screen .subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+
+.welcome-screen .subtitle .highlight {
+    background-color: #f0d0d5;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.welcome-screen .description {
+    font-size: 18px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Второй экран - галерея */
+.gallery-screen .gallery-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.gallery-screen .gallery-container img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+.gallery-screen .title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gallery-screen .title .accent {
+    color: var(--accent-color);
+}
+
+/* Третий экран - меню */
+.menu-screen .title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.menu-screen .menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.menu-screen .menu-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.menu-screen .menu-item {
+    width: 60px;
+    height: 60px;
+    background-color: var(--button-bg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+}
+
+.menu-screen .menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('assets/arrow-down.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Четвертый экран - качества */
+.qualities-screen {
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.qualities-screen .star {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.qualities-screen .qualities-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.qualities-screen .quality-item {
+    font-size: 18px;
+    text-align: center;
+}
+
+.qualities-screen .quality-item.highlight {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+/* Пятый экран - фото */
+.photo-screen .title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.photo-screen .photo-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.photo-screen .photo-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.photo-screen .photo-caption {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: -20px;
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-screen .description {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Общие стили для кнопок и навигации */
+.back-button {
+    width: 50px;
+    height: 50px;
+    background-color: var(--button-bg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    border: none;
+}
+
+.back-button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Add your custom styles based on Figma design here */ 

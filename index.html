@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Mini App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Первый экран: приветствие -->
+        <div class="screen welcome-screen active" id="screen1">
+            <div class="hearts-container">
+                <!-- Здесь будут отображаться сердечки -->
+            </div>
+            
+            <div class="title">
+                я <span class="accent">люблю</span> тебя
+            </div>
+            
+            <div class="subtitle">
+                I got my eyes<br>
+                <span class="highlight">on you</span>
+            </div>
+            
+            <div class="description">
+                это вечное напоминание
+            </div>
+            
+            <button class="back-button" data-next="screen2">
+                <img src="assets/arrow-left.png" alt="Далее">
+            </button>
+        </div>
+        
+        <!-- Второй экран: галерея фото -->
+        <div class="screen gallery-screen" id="screen2">
+            <div class="title">
+                кадры из нашей <span class="accent">жизни</span>
+            </div>
+            
+            <div class="gallery-container">
+                <!-- Здесь будут отображаться фотографии -->
+            </div>
+            
+            <button class="back-button" data-next="screen3">
+                <img src="assets/arrow-left.png" alt="Далее">
+            </button>
+        </div>
+        
+        <!-- Третий экран: меню -->
+        <div class="screen menu-screen" id="screen3">
+            <div class="title">
+                привет!
+            </div>
+            
+            <div class="menu-container">
+                <div class="menu-row">
+                    <div class="menu-item" data-screen="screen4">1</div>
+                    <div class="menu-item" data-screen="screen5">2</div>
+                </div>
+                
+                <div class="menu-label">
+                    тык
+                </div>
+                
+                <div class="menu-row">
+                    <div class="menu-item" data-screen="qualities">3</div>
+                    <div class="menu-item" data-screen="photo">4</div>
+                </div>
+            </div>
+            
+            <button class="back-button" data-next="screen1">
+                <img src="assets/arrow-left.png" alt="Назад">
+            </button>
+        </div>
+        
+        <!-- Четвертый экран: качества -->
+        <div class="screen qualities-screen" id="qualities">
+            <img src="assets/star.png" alt="Звезда" class="star">
+            
+            <div class="qualities-list">
+                <div class="quality-item">страничка поддержки</div>
+                <div class="quality-item">ты все это заслужил</div>
+                <div class="quality-item">ты можешь лучше</div>
+                <div class="quality-item">кушай больше</div>
+                <div class="quality-item">одевайся теплее</div>
+                <div class="quality-item highlight">лучший</div>
+                <div class="quality-item">мужчина</div>
+                <div class="quality-item">ты большая умничка</div>
+                <div class="quality-item">я верю в тебя</div>
+                <div class="quality-item">у тебя все получится</div>
+            </div>
+            
+            <button class="back-button" data-next="screen3">
+                <img src="assets/arrow-left.png" alt="Назад">
+            </button>
+        </div>
+        
+        <!-- Пятый экран: фото -->
+        <div class="screen photo-screen" id="photo">
+            <div class="title">
+                тут ты всегда сможешь увидеть меня
+            </div>
+            
+            <div class="photo-container">
+                <img src="assets/photo.jpg" alt="Фото">
+                <div class="photo-caption">
+                    i love you &lt;3
+                </div>
+            </div>
+            
+            <div class="description">
+                выбрала самую<br>
+                смешную фотку
+            </div>
+            
+            <button class="back-button" data-next="screen3">
+                <img src="assets/arrow-left.png" alt="Назад">
+            </button>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html> 
